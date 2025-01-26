@@ -92,23 +92,46 @@ $notas = array (
 
 arsort($notas);
 echo "notas de los estudiantes";
-foreach($notas as $student => $notas){
-echo "$student: $notas ";
+foreach($notas as $student => $value){
+echo "$student: $value",
+ "<br>";
 }
 
-echo "<br>";
+
 //7
 
- $notas = array (
- "Marta" => 8.5,
- "Isabel" => 7.5,
- "Luis" => 6.5,
- $notas => 5.85,
- );
+$alumnos = [
+    ["nombre" => "Marta", "nota" => 10],
+    ["nombre" => "Isabel", "nota" => 8],
+    ["nombre" => "Luis", "nota" => 7],
+    ["nombre" => "Miguel", "nota" => 5],
+    ["nombre" => "Aitor", "nota" => 4],
+    ["nombre"=> "Pepe", "nota" => 1],
+];
 
- foreach ($notas as $nombre => $notas) {
-echo "$nombre: $notas ";
- }
+// Calcular la media
+$media = array_sum(array_column($alumnos, "nota")) / count($alumnos);
+echo "La media de las notas es: " . number_format($media, 2) . "\n"; "<br>";
+
+echo "<br>";
+
+echo "Alumnos con nota por encima de la media:\n";
+foreach ($alumnos as $alumno) {
+    if ($alumno["nota"] > $media) {
+        echo "- {$alumno['nombre']}\n";
+    }
+}
+
+//8
+$alumnos = [
+
+
+
+
+
+];
+
+
      
  
 
